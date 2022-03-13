@@ -29,8 +29,6 @@
 일단 만들어는 봤는데... 뭔가 이상해서 파우치 제작은 연말로 보류 중입니다.<br/>
 <img src='https://user-images.githubusercontent.com/55790232/158062780-d8d56e7e-3691-48fb-990b-f5ce2d58452a.png' width='40%' height='40%'></img>
 
-![김호랑](https://user-images.githubusercontent.com/55790232/158062780-d8d56e7e-3691-48fb-990b-f5ce2d58452a.png)
-
 
 파우치를 팔기 전에 캐릭터 인지도를 키우는 게 우선인 것 같아 인스타 계정([@h0rang_kim](https://www.instagram.com/h0rang_kim))을 따로 팠습니다.<br/>
 그런데 요즘 그림을 잘 안 그려서 게시물이 거의 없네요:/
