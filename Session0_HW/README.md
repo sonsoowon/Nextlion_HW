@@ -27,6 +27,8 @@
 ### 캐릭터 디자인 & 파우치 샘플 제작
 삼성 노트북 파우치 디자인 공모전에 참여했다가 처참히 탈락하고 그냥 스스로 만들어야겠다 결심했습니다.<br/>
 일단 만들어는 봤는데... 뭔가 이상해서 파우치 제작은 연말로 보류 중입니다.<br/>
+<img src='https://user-images.githubusercontent.com/55790232/158062780-d8d56e7e-3691-48fb-990b-f5ce2d58452a.png' width='40%' height='40%'></img>
+
 ![김호랑](https://user-images.githubusercontent.com/55790232/158062780-d8d56e7e-3691-48fb-990b-f5ce2d58452a.png)
 
 
