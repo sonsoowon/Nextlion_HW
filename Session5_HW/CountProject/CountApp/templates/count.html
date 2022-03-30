@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자 수 세기</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'count.css' %}">
+</head>
+<body>
+    <form action="{% url 'result' %}" method="post"> {% csrf_token %}
+        <div class="total_container">
+            <h1>글자 수 세기</h1>
+            <textarea name="text" placeholder="텍스트를 입력해주세요."></textarea>
+            <div class="result_container">
+                <div>
+                    <p>공백포함</p>
+                    <p class="result"><span class="num">0</span><span>0 byte</span></p>
+                </div>
+                <div>
+                    <p>공백제외</p>
+                    <p class="result"><span class="num">0</span><span>0 byte</span></p>
+                </div>
+                <div>
+                    <p>단어 수</p>
+                    <p class="result"><span class="num">0</span>개</p>
+                </div>
+                <input type="submit" value="입력">
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

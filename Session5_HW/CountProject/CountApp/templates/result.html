@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자 수 세기</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}">
+</head>
+<body>
+    <div class="total_container">
+        <h1>글자 수 세기</h1>
+        <p class="text">{{text}}</p>
+        <div class="result_container">
+            <div>
+                <p>공백포함</p>
+                <p class="result"><span class="num">{{total_len}}</span><span>{{total_byte}} byte</span></p>
+            </div>
+            <div>
+                <p>공백제외</p>
+                <p class="result"><span class="num">{{no_blank_len}}</span><span>{{no_blank_byte}} byte</span></p>
+            </div>
+            <div>
+                <p>단어 수</p>
+                <p class="result"><span class="num">{{words_count}}</span>개</p>
+            </div>
+            <br/>
+            <button onclick="location.href='count'">다시하기</button>
+        </div>
+    </div>
+</body>
+</html>
