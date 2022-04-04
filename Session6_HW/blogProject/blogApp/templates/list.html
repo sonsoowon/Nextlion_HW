@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <nav class="category">
+            <a href="{% url 'list' %}">전체 {{all_cnt}}</a>
+            <a href="{% url 'list' 'hobby' %}">취미 {{hobby_cnt}}</a>
+            <a href="{% url 'list' 'food' %}">음식 {{food_cnt}}</a>
+            <a href="{% url 'list' 'programming' %}">프로그래밍 {{program_cnt}}</a>
+        </nav>
+        <a href="{% url 'new' %}" class="new">새 글 작성</a>
+    </header>
+
+    <ul class="list">
+        {% for article in articles %}
+        <li>
+            <a href="{% url 'detail' article.id %}">{{ article.title }}</a>
+            <p>{{article.uploaded}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
