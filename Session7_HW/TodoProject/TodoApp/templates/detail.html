@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Gugi&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'detail.css' %}" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="prev">
+                <a href="{% url 'index' %}">
+                    <i class="fa-solid fa-angle-left"></i>
+                </a>
+            </div>
+            <div class="dday">
+                <h1>{{todo.dday}}</h1>
+            </div>
+            <div class="edit-delete">
+                <div class="edit">
+                    <a href="{% url 'edit' todo.pk %}">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </a>
+                </div>
+                <div class="delete">
+                    <a href="{% url 'delete' todo.pk %}">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </a>
+                </div>
+            </div> 
+        </header>
+        <div class="title">
+            <h2>{{todo.title}}</h2>
+        </div>
+        <div class="deadline">
+            <p>마감 기한 {{todo_deadline}}</p>
+        </div>
+        <div class="content">
+            <p>{{todo.content}}</p>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/3f88c0b1b9.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

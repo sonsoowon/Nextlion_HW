@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Gugi&display=swap" rel="stylesheet">
+    
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'form.css' %}" type="text/css"/>
+</head>
+<body>
+    <h2></h2>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+
+            <header>
+                <div class="prev">
+                    <a href="{% url 'index' %}">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                </div>
+                <div class="dday">
+                    <h1></h1>
+                </div>
+                <div class="save">
+                    <button>SAVE</button>
+                </div>
+            </header>
+            <div class="title">
+                <input type="text" name="title" placeholder="제목을 입력하세요." required/>
+            </div>
+            <div class="deadline">
+                <p>마감 기한</p>
+                <input type="date" name="deadline" oninput=ddayCount(this.value) required/>
+            </div>
+            <div class="content">
+                <textarea type="text" name="content" placeholder="내용을 입력하세요."></textarea>
+            </div>
+        </form>
+    </div>
+    
+    
+    <script src="https://kit.fontawesome.com/3f88c0b1b9.js" crossorigin="anonymous"></script>
+    {% load static %}
+    <script src="{% static 'ddayCount.js' %}"></script>
+
+</body>
+</html>

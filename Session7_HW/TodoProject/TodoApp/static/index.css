@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gowun Dodum', sans-serif;
+
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    width: 30rem;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    
+}
+
+header {
+    width: 30rem;
+    height: 5rem;
+    min-height: 5rem;
+    background-color: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 2rem;
+    border-bottom: 3px solid rgb(0, 86, 152);
+
+    position: fixed;
+    z-index: 1;
+
+}
+
+h2 {
+    color: rgb(0, 36, 128);
+    font-weight: bold;
+}
+
+.add {
+    font-size: 2rem;
+    color:rgb(0, 86, 152);
+}
+
+.todo-list {
+    width: 30rem;
+
+    padding: 1rem 1rem 0 1rem;
+
+    position: absolute;
+    top: 5rem;
+}
+
+.todo-list ul {
+    display: block;
+    
+}
+
+.todo-list a {
+    text-decoration: none;
+}
+
+
+
+.todo {
+    transition: box-shadow .3s;
+
+    border: 2px solid rgb(0, 86, 152);
+    border-radius: .4rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    font-size: 1.5rem;   
+}
+
+.todo:hover {
+    box-shadow: 0 0 15px rgba(33, 33, 33, 0.2);
+}
+
+.title {
+    font-weight: bold;
+    color:rgb(0, 36, 128);
+}
+
+.dday {
+    font-family: 'Gugi', cursive;
+    font-weight: bold;
+    color: rgb(0, 86, 152);
+ 
+}

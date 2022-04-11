@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Gowun Dodum', sans-serif;
+
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    width: 30rem;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    
+}
+
+header {
+    width: 100%;
+    height: 5rem;
+    min-height: 5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 2rem;
+    border-bottom: 3px solid  rgb(0, 86, 152);
+    
+}
+
+header > div {
+    width: calc(26rem/3);
+}
+
+.prev {
+    display: flex;
+    justify-content: start;
+}
+
+.dday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+h1 {
+    font-weight: bold;
+    color: rgb(0, 86, 152);
+    font-family: 'Gugi', cursive;
+}
+
+.edit-delete {
+    display: flex;
+    justify-content: end;
+}
+
+.edit-delete div {
+    padding-left: 1rem;
+}
+
+i {
+    font-size: 1.7rem;
+    color:rgb(0, 86, 152);
+
+}
+
+.title {
+    width: 100%;
+
+    font-size: 1.5rem;
+    color: darkblue;
+    
+    padding: .7rem 2rem;
+}
+
+
+.deadline {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+    font-size: 1rem;
+    color: gray;
+
+    padding: 0 2rem;
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+
+    font-size: 1rem;
+    color: darkblue;
+
+    padding: .5rem 2rem;
+    
+
+}
+
+
+
+
+

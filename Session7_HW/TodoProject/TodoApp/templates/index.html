@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Gugi&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2></h2>
+            <div>
+                <a href="{% url 'add' %}"><i class="fa-solid fa-plus add"></i></a>
+            </div>
+        </header>
+        <div class="todo-list">
+            <ul>
+                {% for todo in todo_list %}
+                <a href="{% url 'detail' todo.pk %}">
+                    <li class="todo">
+                        <div class="title">{{todo.title}}</div>
+                        <div class="dday">{{todo.dday}}</div>
+                    </li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {% load static %}
+    <script src="{% static 'index.js' %}"></script>
+
+    <script src="https://kit.fontawesome.com/3f88c0b1b9.js" crossorigin="anonymous"></script>
+</body>
+</html>
