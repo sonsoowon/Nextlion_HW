@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="category">
+        <h1>전공</h1>
+        <a href="{% url 'addMajor' %}"><button class="add">전공 추가</button></a>
+    </div>
+    <ul>
+        {% for major in majors %}
+        <li>
+            <a href="{% url 'filterSubject' major.major_name %}">{{major.major_name}}</a>
+            <div class="buttons">
+                <a href="{% url 'editMajor' major.pk %}"><button class="edit">수정</button></a>
+                <a href="{% url 'deleteMajor' major.pk %}"><button class="delete">삭제</button></a>
+            </div>
+        </li> 
+        {% endfor %}
+    </ul>
+
+    <div class="category">
+        <h1>과목</h1>
+        <a href="{% url 'addSubject' %}"><button class="add">과목 추가</button></a>
+    </div>
+    <ul>
+        {% for subject in subjects %}
+        <li>
+            <a href="{% url 'detail' subject.pk %}"> {{subject.name}} | {{subject.belong_major.major_name}} | {{subject.prof}} </a>
+            <div class="buttons">
+                <a href="{% url 'editSubject' subject.pk %}"><button class="edit">수정</button></a>
+                <a href="{% url 'deleteSubject' subject.pk %}"><button class="delete">삭제</button></a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
