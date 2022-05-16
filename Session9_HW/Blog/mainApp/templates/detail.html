@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}"/>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2 class="index"><a href="{% url 'home' %}">@soow0n__</a></h2>
+            <a href="{% url 'add_post' %}"><button class="add_post">글쓰기</button></a>
+        </header>
+        <div class="item_container">
+            <div class="title_container">
+                <h2 class="title">{{post.title}}</h2>
+                <p class="time">{{post.upload_time}} | 조회수 {{post.click_cnt}}</p>
+            </div>
+            <div class="content">
+                {{post.content}}
+            </div>
+            <div class="buttons">
+                <a href="{% url 'edit_post' post.pk %}"><button class="edit_button">수정</button></a>
+                <a href="{% url 'delete' post.pk %}"><button class="delete_button">삭제</button></a>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>
