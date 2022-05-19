@@ -1,0 +1,101 @@
+* {
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60rem;
+    margin: 0 auto;
+}
+
+nav {
+    
+    width: inherit;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 0 2rem;
+
+    position: fixed;
+    z-index: 1;
+
+    background-color: aliceblue;
+}
+
+nav div{
+    margin: 1rem;
+}
+
+nav div a{
+    font-size: 1.5rem;
+}
+
+
+.footer {
+    width: inherit;
+    height: 3rem;
+    
+    position: fixed;
+    top: 93vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 1;
+
+    font-size: 1rem;
+}
+
+.container {
+    width: inherit;
+    height: 85vh;
+    margin: 0 auto;
+    padding: 1.5rem;
+    position: relative;
+    top: 5rem;
+    
+}
+
+.item {
+    margin: 1.5rem;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: .5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.post_detail {
+    font-size: .9rem;
+    color: gray;
+}
+
+.item_delete {
+    margin: 0 1.5rem;
+}
+
+.item_delete a {
+    font-size: 1.3rem;
+}
+

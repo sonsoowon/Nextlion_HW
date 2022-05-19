@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+{% endblock css %}
+
+{% block content %}
+
+{% for post in posts %}
+<div class="item">
+    <a href="{% url 'detail' post.pk %}">
+        <div class="item_content">
+            <div class="post_title">{{post.title}}</div>
+            <p class="post_detail">{{post.uploaded}}</p>
+        </div>
+    </a>
+    <div class="item_delete">
+        <a href="{% url 'delete_post' post.pk %}">삭제</a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock content%}

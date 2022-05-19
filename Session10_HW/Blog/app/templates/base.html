@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    {% block css %}
+    {% endblock css %}
+</head>
+<body>
+    <nav>
+        <div><a href="{% url 'home' %}">home</a></div>
+        <div><a href="{% url 'new' %}">new</a></div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <div class="footer">
+        <p>yuwoo1018@korea.ac.kr</p>
+    </div>
+</body>
+</html>

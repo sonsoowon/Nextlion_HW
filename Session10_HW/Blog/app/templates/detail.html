@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block css%}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+
+{% endblock css %}
+
+{% block content %}
+
+<div class="post_container">
+    <div class="post_head">
+        <h1 class="post_title">{{post.title}}</h1>
+        <p class="post_detail">수정일 {{post.edited}}</p>
+    </div>
+    <div class="post_buttons">
+        <a href="{% url 'edit' post.pk %}"><button>수정</button></a>
+        <a href="{% url 'delete_post' post.pk %}"><button>삭제</button></a>
+    </div>
+    <div class="post_content">
+        {{post.content}}
+    </div>
+</div>
+
+<div class="comment_container">
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="content">
+        <button type="submit">작성</button>
+    </form>
+
+    {% for comment in post.comments.all %}
+    <div class="comment">
+        <div>
+            <p class="comment_content">{{comment.content}}</p>
+            <p class="comment_detail">{{comment.uploaded}}</p>   
+        </div>
+        <a href="{% url 'delete_comment' post.pk comment.pk %}"><button>삭제</button></a>
+    </div>
+    {% endfor %}
+
+    
+</div>
+
+{% endblock content %}
