@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% endblock css %}
+
+{% block container %}
+{% for post in posts %}
+{% include 'post_list_item.html' %}
+{% endfor %}
+
+{% endblock container %}

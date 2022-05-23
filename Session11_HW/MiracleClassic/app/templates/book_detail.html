@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% endblock css %}
+
+{% block container %}
+<div class="book">
+    <div class="book_img">
+        사진
+    </div>
+    <div class="book_info">
+        <div class="book_title">
+            {{book.title}}
+        </div>
+        <p class="book_author">
+            {{book.author}}
+        </p>
+    </div>
+</div>
+
+<div class="post_container">
+    {% for post in book.posts.all %}
+    {% include 'post_list_item.html' %}
+    {% endfor %}
+</div>
+{% endblock container%}

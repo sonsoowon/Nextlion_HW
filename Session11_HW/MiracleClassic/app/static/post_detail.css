@@ -1,0 +1,61 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 1rem;
+    border: 1px solid whitesmoke;
+    border-radius: .5rem;
+
+    background-color: whitesmoke;
+}
+
+
+.post_head {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+
+    padding-bottom: .5rem;
+
+}
+
+.post_head p {
+    color: gray;
+    margin: 0 .5rem;
+}
+
+
+img {
+    width: 35rem;
+}
+
+figcaption {
+    margin: 1rem 0;
+}
+
+figcaption a {
+    font-weight: bold;
+    color: goldenrod;
+}
+
+.post_time {
+    color: gray;
+    font-size: .8rem;
+    margin: 1rem 0;
+}
+
+.post_buttons button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .2rem .5rem;
+    margin-right: .5rem;
+
+    border: 2px solid orange;
+    border-radius: .5rem;
+    background-color: orange;
+    color: white;
+
+
+}

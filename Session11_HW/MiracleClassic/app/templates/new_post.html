@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미라클 고전</title>
+</head>
+<body>
+    <div class="container" >
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="writer" value={{user.pk}}>
+            <select name="book" >
+                {% for book in books %}
+                <option value="{{book.pk}}">
+                    {{book.title}}
+                </option>
+                {% endfor %}
+            </select>
+            
+            <div class="category">
+                <div class="category_item">
+                    <label for="D">토론글</label>
+                    <input type="radio" name="category" value="D" id="D">
+                </div>
+                <div class="category_item">
+                    <label for="Q">질문글</label>
+                    <input type="radio" name="category" value="Q" id="Q">
+                </div>
+            </div>
+            
+            <input type="file" name="photo" accept=".jpg, .jpeg, .png">
+            
+            <input type="number" name="page" placeholder="페이지를 입력해주세요..">
+
+            <textarea name="content"></textarea>
+
+            <button type="submit">저장</button>
+
+
+          </form>
+    </div>
+
+</body>
+</html>

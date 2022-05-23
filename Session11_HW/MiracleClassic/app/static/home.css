@@ -1,0 +1,12 @@
+.posts_container {
+    margin: 1rem;
+    border: 3px solid orange;
+    border-radius: .5rem;
+}
+
+.container_title {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+
+}

@@ -1,0 +1,37 @@
+.post {
+    padding: 1rem;
+
+}
+
+.post > div {
+    margin: .5rem 0;
+}
+
+.post_head {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.post_head div {
+    margin-right: 1rem;
+}
+
+.writer {
+    font-weight: bold;
+}
+
+.category {
+    color: gray;
+    font-size: .9rem;
+}
+
+.book {
+    font-weight: bold;
+    color: orange;
+}
+
+
+

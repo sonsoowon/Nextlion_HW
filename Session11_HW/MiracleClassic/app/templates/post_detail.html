@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'post_detail.css' %}">
+{% endblock css %}
+
+{% block container %}
+<div class="post">
+    <div class="post_head">
+        <h2>{{post.writer}}</h2>
+        <p>
+            {% if post.category == 'D' %}
+            토론해요
+            {% else %}
+            궁금해요
+            {% endif %}
+        </p>
+    </div>
+    <figure class="photo">
+        <img src="{{post.photo.url}}">
+        <figcaption>
+            <a href="{% url 'book_detail' post.book_pk.pk%}">
+                {{post.book_pk.title}}
+            </a> 
+            p.{{post.page}}
+        </figcaption>
+        
+    </figure>
+    
+    <div class="content">
+        {{post.content}}
+
+        <p class="post_time">
+            {{post.uploaded}}
+            {% if post.uploaded != post.edited %}
+            수정됨
+            {% endif %}
+        </p>
+    </div>
+
+    <div class="post_buttons">
+        {% if user.is_authenticated and user == post.writer %}
+        <a href="{% url 'edit_post' post.pk %}">
+            <button>수정</button>
+        </a>
+
+        <a href="{% url 'delete_post' post.pk %}">
+            <button>삭제</button>
+        </a>
+
+        {% endif %}
+    </div>
+</div>
+
+
+<div class="comment_container">
+    {% if user.is_authenticated %}
+    <div class="write_comment">
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="post_pk" value="{{post.pk}}">
+            <input type="hidden" name="writer" value="{{user.pk}}">
+            <textarea name="content"></textarea>
+            <button type="submit">작성</button>
+        </form>
+    </div>
+    {% endif %}
+
+    <div class="show_comments">
+        {% for comment in post.comments.all %}
+        <div class="comment">
+            {{comment.writer.name}}
+            {{comment.content}}
+            {{comment.uploaded}}
+
+            {% if user.is_authenticated and user == comment.writer %}
+            <a href="{% url 'delete_comment' post.pk comment.pk %}">
+                <button>삭제</button>
+            </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock container %}

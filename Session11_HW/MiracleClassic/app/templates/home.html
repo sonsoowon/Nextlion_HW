@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% load static %}
+<link rel="stylesheet" text="text/css" href="{% static 'post_item.css' %}">
+{% endblock css %}
+
+
+{% block container %}
+<div class="posts_container">
+    <div class="container_title">
+        <a href="{% url 'post_list' 'debates' %}">
+            뜨거운 감자
+        </a>
+    </div>
+    <div class="container_list">
+        {% for post in debates %}
+        {% include 'post_list_item.html' %}
+        {% endfor %}
+    </div>
+    
+</div>
+
+<div class="posts_container">
+    <div class="container_title">
+        <a href="{% url 'post_list' 'questions' %}">
+            알쏭달쏭 질문
+        </a>
+    </div>
+    <div class="container_list">
+        {% for post in questions %}
+        {% include 'post_list_item.html' %}
+        {% endfor %}
+    </div>
+    
+</div>
+
+
+{% endblock container %}

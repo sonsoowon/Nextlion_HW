@@ -1,0 +1,48 @@
+* {
+    margin: 0; border: 0; padding: 0;
+    box-sizing: border-box;
+
+    color: black;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    min-width: 40rem;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 1rem 2rem;
+    background-color: orange;
+}
+
+.nav_title a{
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav_options {
+    font-size: 1.2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav_options a {
+    margin: 1rem;
+    color: white;
+}
+
+
+main {
+    padding: 1rem;
+}

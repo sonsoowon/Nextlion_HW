@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미라클 고전</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="container" >
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="book">
+                {{post.book_pk.title}}
+            </div>
+            
+            
+            <div class="category">
+                <div class="category_item">
+                    <label for="D">토론글</label>
+                    {% if post.category == 'D' %}
+                    <input type="radio" name="category" value="D" id="D" checked="checked">
+                    {% else %}
+                    <input type="radio" name="category" value="D" id="D">
+                    {% endif%}
+                </div>
+                <div class="category_item">
+                    <label for="Q">질문글</label>
+                    {% if post.category == 'Q' %}
+                    <input type="radio" name="category" value="Q" id="Q" checked="checked">
+                    {% else %}
+                    <input type="radio" name="category" value="Q" id="Q">
+                    {% endif%}
+                    
+                </div>
+            </div>
+            
+            <input type="number" name="page" value="{{post.page}}">
+
+            <textarea name="content">{{post.content}}</textarea>
+
+            <button type="submit">저장</button>
+
+
+          </form>
+    </div>
+
+</body>
+</html>
