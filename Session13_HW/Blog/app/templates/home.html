@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block css %}
+{% endblock css %}
+
+{% block content %}
+<div class="post-list">
+    {% for post in posts %}
+    <a class="post-item" href="{% url 'detail' post.pk %}">
+        <div class="item-wrapper">
+            <div class="main-info">
+                <h4>{{post.title}}</h4>
+            </div>
+            <div class="sub-info">
+                <p>by {{post.author}}</p>
+                <p>좋아요 {{post.likes.count}} 개</p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock content %}

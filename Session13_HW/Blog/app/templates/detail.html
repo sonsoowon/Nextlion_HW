@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block css %}
+{% endblock css %}
+
+{% block content %}
+<div class="container">
+    <h3>{{post.title}}</h3>
+    <p>{{post.content}}</p>
+    <p>{{post.uploaded}}</p>
+
+
+    {% if user.is_authenticated and user == post.author %}
+    <div class="button-wrapper">
+        <a class="button-item" href="{% url 'edit' post.pk %}">수정</a>
+        <a class="button-item" href="{% url 'delete' post.pk %}">삭제</a>
+    </div>
+    {% endif %}
+
+    
+    <div class="button-wrapper">
+        <button id="like" onclick="like()">좋아요</button>
+        <span id="like_count"> {{post.likes.count}} 개</span>
+
+        <button id="scrap" onclick="scrap()">스크랩</button>
+        {% if user.is_authenticated and user == post.author %}
+        <span id="scrap_count">{{post.scraps.count}} 개</span>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    const likeBtn = document.getElementById("like");
+    const scrapBtn = document.getElementById("scrap");
+
+        
+    const goToLogin = () => {   
+        if (confirm('로그인 창으로 이동합니다')){          
+            window.location = "/registration/login";     
+        }    
+    }
+
+        
+    const like = async () => {
+        let auth = "{{request.user.is_authenticated}}";
+        if (auth === "True"){
+            likeClick();
+        } else {
+            goToLogin();
+        }
+    }
+
+    const likeClick = async () => {
+        try {
+            const res = await axios.post('/like', {post_pk: "{{post.pk}}"});
+            document.getElementById("like_count").innerHTML = res.data.like_count + '개';
+            if (res.data.is_like) {
+                likeBtn.style.color = 'red';
+            } else {
+                likeBtn.style.color = 'black';
+            }
+        }
+        catch (e) {
+            console.error(e)
+        }
+    }
+
+    const likeColor = () => {
+        if ("{{is_like}}" === "True"){
+            likeBtn.style.color = 'red';
+        } else {
+            likeBtn.style.color = 'black';
+        }
+    }
+
+    const scrap = async () => {
+        let auth = "{{request.user.is_authenticated}}";
+        if (auth === "True"){
+            scrapClick();
+        } else {
+            goToLogin();
+        }
+    }
+
+    const scrapClick = async () => {
+        try {
+            const res = await axios.post('/scrap', {post_pk: "{{post.pk}}"});
+            document.getElementById("scrap_count").innerHTML = res.data.scrap_count + '개';
+        }
+        catch (e) {
+            console.error(e)
+        }
+    }
+
+    window.onload = likeColor;    
+</script>
+
+
+{% endblock content %}
