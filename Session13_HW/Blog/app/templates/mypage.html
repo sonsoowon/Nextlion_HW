@@ -5,30 +5,14 @@
 <h3>좋아요 목록</h3>
 {% for like in user.likes.all %}
 <a class="post-item" href="{% url 'detail' like.post.pk %}">
-    <div class="item-wrapper">
-        <div class="main-info">
-            <h4>{{like.post.title}}</h4>
-        </div>
-        <div class="sub-info">
-            <p>by {{like.post.author}}</p>
-            <p>좋아요 {{like.post.likes.count}} 개</p>
-        </div>
-    </div>
+    <h4>{{like.post.title}}</h4>
 </a>
 {% endfor %}
 
 <h3>스크랩 목록</h3>
 {% for scrap in user.scraps.all %}
 <a class="post-item" href="{% url 'detail' scrap.post.pk %}">
-    <div class="item-wrapper">
-        <div class="main-info">
-            <h4>{{scrap.post.title}}</h4>
-        </div>
-        <div class="sub-info">
-            <p>by {{scrap.post.author}}</p>
-            <p>좋아요 {{scrap.post.likes.count}} 개</p>
-        </div>
-    </div>
+    <h4>{{scrap.post.title}}</h4>
 </a>
 {% endfor %}
 
